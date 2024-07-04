@@ -1,1 +1,82 @@
 .vs/
+
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Mono Auto Generated Files
+.mono/
+mono/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Uncomment if you have tasks that create the project's static files in "wwwroot"
+# wwwroot/
+# Also uncomment if you use Gulp for static files
+# !wwwroot/node_modules/
+# !wwwroot/dist/
+
+# Ignore the Visual Studio Web optimization packages folder
+packages/
+
+# Visual Studio Code Snippets
+*.code-snippets
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directory
+.vscode/
+
+# VS directory
+.vs/
+
+# Windows Azure
+*.azureUserPassword
+*.publishSettings
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea/*
+
+# Rider and IntelliJ project files
+*.idea
+.idea/
+
+# Ignore auto-generated assembly info file
+AssemblyInfo.cs
+
+# Ignore NuGet Packages
+*.nupkg
+*.snupkg
+.nuget/
+
+# Ignore project build outputs
+bin/
+obj/

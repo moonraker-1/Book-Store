@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:BookStoreDesktop"
         mc:Ignorable="d"
         Title="CustomMessageBox" Height="180" Width="300">
-    <Grid>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="117,136,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnSave_Click"/>
-        <Button x:Name="btnNoSave" Content="Don't Save" HorizontalAlignment="Left" Margin="163,136,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnNoSave_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="243,136,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnCancel_Click"/>
+    <Grid Height="180">
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="81,116,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnSave_Click" Height="25" Width="47"/>
+        <Button x:Name="btnNoSave" Content="Don't Save" HorizontalAlignment="Left" Margin="141,116,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnNoSave_Click" Height="25" Width="73"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="228,116,0,0" Padding="5,0,5,0" VerticalAlignment="Top" Click="btnCancel_Click" Height="25" Width="53"/>
         <Label x:Name="messageLabel" Content="Label" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Height="58" Width="280"/>
 
     </Grid>

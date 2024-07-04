@@ -19,9 +19,11 @@ namespace BookStoreDesktop
     /// </summary>
     public partial class CustomMessageBox : Window
     {   
-        public CustomMessageBoxButtonHandler SaveButtonHandler { get; set; }
-        public CustomMessageBoxButtonHandler NoSaveButtonHandler { get; set; }
-        public CustomMessageBoxButtonHandler CancelButtonHandler { get; set; }
+        public CustomMessageBoxSaveHandler SaveButtonHandler { get; set; }
+        public CustomMessageBoxNoSaveHandler NoSaveButtonHandler { get; set; }
+        public CustomMessageBoxCancelHandler CancelButtonHandler { get; set; }
+
+        public System.ComponentModel.CancelEventArgs CancelEventArgs { get; set; }
 
         public CustomMessageBox()
         {
@@ -30,18 +32,21 @@ namespace BookStoreDesktop
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            SaveButtonHandler.Invoke();
+            SaveButtonHandler.Invoke(null, null);
+            this.Close();
         }
 
         private void btnNoSave_Click(object sender, RoutedEventArgs e)
         {
-            NoSaveButtonHandler.Invoke();
+            //NoSaveButtonHandler.Invoke();
+            this.Close();
 
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            CancelButtonHandler.Invoke(CancelEventArgs);
+            this.Close();
         }
     }
 }

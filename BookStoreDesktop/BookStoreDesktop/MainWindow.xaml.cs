@@ -120,7 +120,7 @@ namespace BookStoreDesktop
         private void tb_gotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
-            if (!_tbText.Values.Contains(tb.Text))
+            if (!_tbText.Values.Contains(tb.Text) && !_tbText.Keys.Contains(tb))
             {
                 _tbText.Add(tb, tb.Text);
             }
@@ -130,20 +130,36 @@ namespace BookStoreDesktop
         private void tb_lostFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
-            if (_tbText.Keys.Contains(tb)) 
+            if (tb.Text.Length == 0)
             {
-                if (_tbText.TryGetValue(tb, out string value))
+                if (_tbText.Keys.Contains(tb))
                 {
-                    tb.Text = value;
+                    if (_tbText.TryGetValue(tb, out string value))
+                    {
+                        tb.Text = value;
+                    }
                 }
-            } 
+            }
+
         }
         
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!_saved)
             {
+                CustomMessageBox cmb = new CustomMessageBox();
+                cmb.SaveButtonHandler = save_Click;
+                //cmb.NoSaveButtonHandler = this.Window_Closing;
+                cmb.CancelButtonHandler = cancelClosing;
+                cmb.CancelEventArgs = e;
+                cmb.ShowDialog();
+
             }
+        }
+
+        private void cancelClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }
