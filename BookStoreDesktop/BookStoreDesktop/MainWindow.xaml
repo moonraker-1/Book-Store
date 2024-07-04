@@ -18,6 +18,27 @@
                         <ColumnDefinition Width="39*"/>
                         <ColumnDefinition Width="358*"/>
                     </Grid.ColumnDefinitions>
+                    <TextBox x:Name="tbUsername" Grid.Column="1" HorizontalAlignment="Left" Margin="225,102,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="188" RenderTransformOrigin="0.5,0.5" Height="32" FontSize="18">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.155"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                    <TextBox x:Name="tbPassword" Grid.Column="1" HorizontalAlignment="Left" Margin="225,147,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="188" RenderTransformOrigin="0.5,0.5" Height="32" FontSize="18">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.155"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                    <Button x:Name="loginButton" Grid.Column="1" Content="Log In" HorizontalAlignment="Left" Margin="261,203,0,0" VerticalAlignment="Top" Height="34" Width="116" Click="loginButton_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabNewBook" Header="New Book" Loaded="tabNewBook_Loaded">
@@ -43,5 +64,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button x:Name="register_Button" Grid.Column="1" Content="Log In" HorizontalAlignment="Left" Margin="213,272,0,0" VerticalAlignment="Top" Height="25" Width="84" Click="register_Button_Click"/>
     </Grid>
 </Window>

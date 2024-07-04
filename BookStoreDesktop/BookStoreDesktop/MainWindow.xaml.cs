@@ -17,6 +17,7 @@ namespace BookStoreDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private User user;
         private List<Book> books;
 
         private Dictionary<TextBox, string> _tbText = new Dictionary<TextBox, string>();
@@ -160,6 +161,37 @@ namespace BookStoreDesktop
         private void cancelClosing(System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
+        }
+
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            CredentialsHandler.EnteredUsername = tbUsername.Text;
+            CredentialsHandler.EnteredPassword = tbPassword.Text;
+            if (CredentialsHandler.CheckCredentials())
+            {
+                MessageBox.Show("Success");
+            }
+            else
+            {
+                MessageBox.Show("Failure");
+            }
+        }
+
+        private void register_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CredentialsHandler.EnteredUsername = tbUsername.Text;
+                CredentialsHandler.EnteredPassword = tbPassword.Text;
+                CredentialsHandler.RegisterCredentials();
+                MessageBox.Show("Success");
+
+            }
+            catch
+            {
+                MessageBox.Show("Failure");
+            }
         }
     }
 }
